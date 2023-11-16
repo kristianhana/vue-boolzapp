@@ -1,0 +1,42 @@
+.container {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    min-width: auto;
+}
+
+.contacts::-webkit-scrollbar {
+    display: none;
+}
+
+.left-disclaimer-text,
+.header-left .header-left-icons,
+.left-searchbar,
+.left-disclaimer,
+.contact-info {
+    display: none;
+}
+
+.left {
+    width: 90px;
+}
+
+.header-left {
+    justify-content: center;
+}
+
+.header-left .header-left-logo img {
+    margin-left: 0;
+}
+
+.left .contacts {
+    height: calc(100% - 70px);
+}
+
+.right {
+    width: 100%;
+}
+
+.right .right-messages {
+    padding: 5%;
+}

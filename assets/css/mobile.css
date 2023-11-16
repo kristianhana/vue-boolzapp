@@ -1,0 +1,14 @@
+.header-right .header-right-icons,
+.right-footer-icon,
+.left {
+    display: none;
+}
+
+.right .right-footer .new-message-inputs {
+    width: 100%;
+    margin: auto 20px;
+}
+
+.right .right-messages .message {
+    max-width: 80%;
+}
