@@ -53,11 +53,14 @@
           <label class="search-label" for="search">
             <i class="fa fa-search" aria-hidden="true"></i>
           </label>
+          <!-- Added search text and call a function to compare text with name of contact -->
           <input
+            v-model="searchContact"
             id="contacts-filter"
             class="left-searchbar-input"
             placeholder="Cerca o inizia una nuova chat"
             name="search"
+            @keyup="contactSearch"
           />
         </div>
 
@@ -67,7 +70,8 @@
         <!-- Add class active on clicked contact -->
           <div v-for="(contact, index) in contacts" 
           :class="(index == indexActive) ? 'contact active' : 'contact'"
-          @click="activeContact(index)">
+          @click="activeContact(index)"
+          v-show="contact.visible">
             <div class="contact-logo">
              <!-- Dynamically added cotacts images -->
               <img :src="`assets/img/avatar${contact.avatar}.jpg`" alt="Avatar Michele" />
@@ -133,7 +137,9 @@
           <div class="right-footer-icon">
             <i class="far fa-smile"></i>
           </div>
+          <!-- Input -->
           <input class="new-message-inputs" placeholder="Scrivi un messaggio" />
+
           <div class="right-footer-icon">
             <i class="fa fa-microphone" aria-hidden="true"></i>
           </div>

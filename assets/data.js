@@ -167,11 +167,22 @@ createApp({
         },
       ],
       indexActive: 0,
+      searchContact: "",
     };
   },
   methods: {
     activeContact(index) {
         this.indexActive = index;
+    },
+    contactSearch() {
+      let search = this.searchContact.toLowerCase();
+      this.contacts.forEach(element => {
+         if(element.name.toLowerCase().includes(search)) {
+            element.visible = true; 
+         } else {
+            element.visible = false;
+         }
+      });
     }
   },
 }).mount("#app");
