@@ -166,7 +166,12 @@ createApp({
           ],
         },
       ],
+      indexActive: 0,
     };
   },
-  methods: {},
+  methods: {
+    activeContact(index) {
+        this.indexActive = index;
+    }
+  },
 }).mount("#app");

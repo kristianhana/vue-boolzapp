@@ -63,22 +63,23 @@
 
         <!-- Contacts -->
         <div class="contacts">
-            <!-- Dynamically added contacts -->
-          <div v-for="(contact) in contacts" class="contact">
+        <!-- Dynamically added contacts -->
+        <!-- Add class active on clicked contact -->
+          <div v-for="(contact, index) in contacts" 
+          :class="(index == indexActive) ? 'contact active' : 'contact'"
+          @click="activeContact(index)">
             <div class="contact-logo">
              <!-- Dynamically added cotacts images -->
               <img :src="`assets/img/avatar${contact.avatar}.jpg`" alt="Avatar Michele" />
             </div>
-           
             <div class="contact-info">
               <h3>
                 <!-- Dynamically added names -->
                 <span class="contact-name">{{contact.name}}</span>
                 <span class="time">16:15</span>
               </h3>
-              <small>Lorem ipsum dolor sit amet</small>
+              <small>Ultimo messaggio inviato</small>
             </div>
-
           </div>
         </div>
       </div>
@@ -99,16 +100,14 @@
             <i class="fas fa-ellipsis-v"></i>
           </div>
         </div>
+
         <div class="right-messages-container">
           <div class="right-messages">
+
             <div class="message sent">
               <div class="message-inner">
-                <span class="message-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quaerat eos blanditiis architecto expedita aspernatur quasi,
-                  et nobis aut officiis soluta voluptates nesciunt voluptate
-                  ipsa fuga rerum doloribus, unde laboriosam doloremque?
-                </span>
+                <span class="message-text"></span>
+                
                 <div class="message-options">
                   <i class="fa fa-chevron-down"></i>
                   <div class="message-options-panel">
@@ -119,14 +118,11 @@
               </div>
               <span class="message-time">16:13</span>
             </div>
+
             <div class="message received">
               <div class="message-inner">
-                <span class="message-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quaerat eos blanditiis architecto expedita aspernatur quasi,
-                  et nobis aut officiis soluta voluptates nesciunt voluptate
-                  ipsa fuga rerum doloribus, unde laboriosam doloremque?
-                </span>
+                <span class="message-text"></span>
+
                 <div class="message-options">
                   <i class="fa fa-chevron-down"></i>
                   <div class="message-options-panel">
@@ -139,6 +135,7 @@
             </div>
           </div>
         </div>
+        
         <div class="right-footer">
           <div class="right-footer-icon">
             <i class="far fa-smile"></i>
