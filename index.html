@@ -60,102 +60,25 @@
             name="search"
           />
         </div>
+
+        <!-- Contacts -->
         <div class="contacts">
-          <div class="contact">
+            <!-- Dynamically added contacts -->
+          <div v-for="(contact) in contacts" class="contact">
             <div class="contact-logo">
-              <img src="assets/img/avatar_1.jpg" alt="Avatar Michele" />
+             <!-- Dynamically added cotacts images -->
+              <img :src="`assets/img/avatar${contact.avatar}.jpg`" alt="Avatar Michele" />
             </div>
+           
             <div class="contact-info">
               <h3>
-                <span class="contact-name">Michele</span>
+                <!-- Dynamically added names -->
+                <span class="contact-name">{{contact.name}}</span>
                 <span class="time">16:15</span>
               </h3>
               <small>Lorem ipsum dolor sit amet</small>
             </div>
-          </div>
-          <div class="contact">
-            <div class="contact-logo">
-              <img src="assets/img/avatar_2.jpg" alt="Avatar Fabio" />
-            </div>
-            <div class="contact-info">
-              <h3>
-                <span class="contact-name">Fabio</span>
-                <span class="time">16:05</span>
-              </h3>
-              <small>Lorem ipsum dolor sit amet</small>
-            </div>
-          </div>
-          <div class="contact">
-            <div class="contact-logo">
-              <img src="assets/img/avatar_3.jpg" alt="Avatar Samuele" />
-            </div>
-            <div class="contact-info">
-              <h3>
-                <span class="contact-name">Samuele</span>
-                <span class="time">16:03</span>
-              </h3>
-              <small>Lorem ipsum dolor sit amet</small>
-            </div>
-          </div>
-          <div class="contact">
-            <div class="contact-logo">
-              <img src="assets/img/avatar_4.jpg" alt="Avatar Alessandro B." />
-            </div>
-            <div class="contact-info">
-              <h3>
-                <span class="contact-name">Alessandro B.</span>
-                <span class="time">15:50</span>
-              </h3>
-              <small>Lorem ipsum dolor sit amet</small>
-            </div>
-          </div>
-          <div class="contact">
-            <div class="contact-logo">
-              <img src="assets/img/avatar_5.jpg" alt="Avatar Alessandro L." />
-            </div>
-            <div class="contact-info">
-              <h3>
-                <span class="contact-name">Alessandro L.</span>
-                <span class="time">15:45</span>
-              </h3>
-              <small>Lorem ipsum dolor sit amet</small>
-            </div>
-          </div>
-          <div class="contact">
-            <div class="contact-logo">
-              <img src="assets/img/avatar_6.jpg" alt="Avatar Claudia" />
-            </div>
-            <div class="contact-info">
-              <h3>
-                <span class="contact-name">Claudia</span>
-                <span class="time">15:40</span>
-              </h3>
-              <small>Lorem ipsum dolor sit amet</small>
-            </div>
-          </div>
-          <div class="contact">
-            <div class="contact-logo">
-              <img src="assets/img/avatar_7.jpg" alt="Avatar Federico" />
-            </div>
-            <div class="contact-info">
-              <h3>
-                <span class="contact-name">Federico</span>
-                <span class="time">15:22</span>
-              </h3>
-              <small>Lorem ipsum dolor sit amet</small>
-            </div>
-          </div>
-          <div class="contact">
-            <div class="contact-logo">
-              <img src="assets/img/avatar_8.jpg" alt="Avatar Davide" />
-            </div>
-            <div class="contact-info">
-              <h3>
-                <span class="contact-name">Davide</span>
-                <span class="time">15:15</span>
-              </h3>
-              <small>Lorem ipsum dolor sit amet</small>
-            </div>
+
           </div>
         </div>
       </div>
