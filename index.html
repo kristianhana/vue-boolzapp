@@ -88,9 +88,13 @@
       <div class="right">
         <div class="header-right">
           <div class="header-right-logo">
-            <img src="assets/img/avatar_1.jpg" alt="" />
+            
+            <!-- Added on right container on click show image of contact  -->
+            <img :src="`assets/img/avatar${contacts[indexActive].avatar}.jpg`" alt="" />
             <h3>
-              <span id="header-right-contact-name">Michele</span> <br />
+
+             <!-- Added on right container on click show name of contact  -->
+              <span id="header-right-contact-name">{{contacts[indexActive].name}}</span> <br />
               <small class="time">Ultimo accesso oggi alle 16:26</small>
             </h3>
           </div>
