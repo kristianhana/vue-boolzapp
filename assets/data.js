@@ -196,9 +196,8 @@ createApp({
       }
     },
 
-    removeMessage() {
-      const index = this.contacts[this.indexActive].messages.indexOf()
-      this.contacts[this.indexActive].messages.splice(index, 1)
+    removeMessage(indexActive) {
+      this.contacts[this.indexActive].messages.splice(this.indexActive, 1)
     },
 
     contactSearch() {
