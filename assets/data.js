@@ -184,6 +184,7 @@ createApp({
           status: 'sent',
         });
         this.textAdded = "";
+        
         setTimeout(() => {
           this.contacts[index].messages.push({
             message: 'Ok',
