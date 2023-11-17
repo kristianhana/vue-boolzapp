@@ -196,6 +196,11 @@ createApp({
       }
     },
 
+    removeMessage(index) {
+      this.contacts[this.indexActive].messages.splice(index, 1)
+      return
+    },
+
     contactSearch() {
       let search = this.searchContact.toLowerCase();
       this.contacts.forEach((element) => {
