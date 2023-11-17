@@ -73,8 +73,8 @@
           @click="activeContact(index)"
           v-show="contact.visible">
             <div class="contact-logo">
-             <!-- Dynamically added cotacts images -->
-              <img :src="`assets/img/avatar${contact.avatar}.jpg`" alt="Avatar Michele" />
+             <!-- Dynamically added contacts images -->
+              <img :src="`assets/img/avatar${contact.avatar}.jpg`" :alt="`Avatar ${contact.name}`" />
             </div>
             <div class="contact-info">
               <h3>
@@ -95,7 +95,7 @@
           <div class="header-right-logo">
 
             <!-- Added on right container on click show image of contact  -->
-            <img :src="`assets/img/avatar${contacts[indexActive].avatar}.jpg`" alt="" />
+            <img :src="`assets/img/avatar${contacts[indexActive].avatar}.jpg`" :alt="`${contacts[indexActive].name}`" />
             <h3>
 
              <!-- Added on right container on click show name of contact  -->
@@ -129,7 +129,7 @@
                   </div>
                 </div>
               </div>
-              <span class="message-time">16:13</span>
+              <span class="message-time">{{message.date}}</span>
             </div>
           </div>
         </div>
@@ -138,8 +138,13 @@
           <div class="right-footer-icon">
             <i class="far fa-smile"></i>
           </div>
-          <!-- Input -->
-          <input class="new-message-inputs" placeholder="Scrivi un messaggio" />
+
+          <!-- Input footer -->
+          <!-- Added function that adds message -->
+          <input 
+           v-model="textAdded"
+           @keyup.enter="addMessage"
+           class="new-message-inputs" placeholder="Scrivi un messaggio" />
 
           <div class="right-footer-icon">
             <i class="fa fa-microphone" aria-hidden="true"></i>

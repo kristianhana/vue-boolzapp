@@ -168,21 +168,36 @@ createApp({
       ],
       indexActive: 0,
       searchContact: "",
+      textAdded: "",
     };
   },
   methods: {
     activeContact(index) {
-        this.indexActive = index;
+      this.indexActive = index;
     },
+
+    addMessage() {
+      let index = this.indexActive
+      if (this.textAdded.trim() !== "") {
+        this.contacts[index].messages.push({
+          message: this.textAdded,
+          status: 'sent',
+        });
+        this.textAdded = "";
+      }
+    },
+
     contactSearch() {
       let search = this.searchContact.toLowerCase();
-      this.contacts.forEach(element => {
-         if(element.name.toLowerCase().includes(search)) {
-            element.visible = true; 
-         } else {
-            element.visible = false;
-         }
+      this.contacts.forEach((element) => {
+        if (element.name.toLowerCase().includes(search)) {
+          element.visible = true;
+        } else {
+          element.visible = false;
+        }
       });
-    }
+    },
   },
+
+ 
 }).mount("#app");
