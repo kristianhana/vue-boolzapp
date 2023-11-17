@@ -177,13 +177,19 @@ createApp({
     },
 
     addMessage() {
-      let index = this.indexActive
+      let index = this.indexActive;
       if (this.textAdded.trim() !== "") {
         this.contacts[index].messages.push({
           message: this.textAdded,
           status: 'sent',
         });
         this.textAdded = "";
+        setTimeout(() => {
+          this.contacts[index].messages.push({
+            message: 'Ok',
+            status: 'recived',
+          });
+        }, 1000);
       }
     },
 
