@@ -182,13 +182,15 @@ createApp({
         this.contacts[index].messages.push({
           message: this.textAdded,
           status: 'sent',
+          date: new Date().toLocaleString(),
         });
         this.textAdded = "";
-        
+
         setTimeout(() => {
           this.contacts[index].messages.push({
             message: 'Ok',
             status: 'recived',
+            date: new Date().toLocaleString(),
           });
         }, 1000);
       }
