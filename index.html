@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link
       href="https://fonts.googleapis.com/css?family=Lato"
       rel="stylesheet"
@@ -82,7 +82,7 @@
                 <span class="contact-name">{{contact.name}}</span>
                 <span class="time">16:15</span>
               </h3>
-              <small>Ultimo messaggio inviato</small>
+              <small>{{ contact.messages[contact.messages.length - 1].message }}</small>
             </div>
           </div>
         </div>

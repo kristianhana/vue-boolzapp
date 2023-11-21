@@ -196,6 +196,7 @@ createApp({
       }
     },
 
+
     removeMessage(indexActive) {
       this.contacts[this.indexActive].messages.splice(this.indexActive, 1)
     },
